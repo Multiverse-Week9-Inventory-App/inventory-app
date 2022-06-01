@@ -18,4 +18,19 @@ router.get("/", async (req, res, next) => {
   }
 });
 
+router.post("/", async (req, res, next) => {
+  const item = req.body
+  try {
+    const newItem = await Item.create({
+      title: item.title,
+      description: item.description,
+      category: item.category,
+      image: item.image,
+      price: item.price
+    })
+  } catch (error) {
+    next(error);
+  }
+})
+
 module.exports = router;
