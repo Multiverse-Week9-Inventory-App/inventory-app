@@ -29,8 +29,8 @@ export function App() {
     <main>
       <h1>Item Store</h1>
       <Routes>
-        <Route path="/" element={<ItemsList items={items} />} />
-        <Route path="/add" element={<AddItem />} />
+        <Route exact path="/itemsList" element={<ItemsList items={items} />} />
+        <Route exact path="/add" element={<AddItem />} />
       </Routes>
     </main>
   );
