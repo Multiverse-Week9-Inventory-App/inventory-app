@@ -29,7 +29,7 @@ export function App() {
     <main>
       <h1>Item Store</h1>
       <Routes>
-        <Route exact path="/itemsList" element={<ItemsList items={items} />} />
+        <Route exact path="/" element={<ItemsList items={items} />} />
         <Route exact path="/add" element={<AddItem />} />
       </Routes>
     </main>
