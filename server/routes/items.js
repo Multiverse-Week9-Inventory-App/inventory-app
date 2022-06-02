@@ -5,14 +5,14 @@ const { Item } = require("../models");
 // Get a single item by ID
 router.get("/:id", async (req, res, next) => {
   const item = await Item.findByPk(req.params.id);
-  res.send(item);
+  res.json(item);
 });
 
 // GET /item -- get all items
 router.get("/", async (req, res, next) => {
   try {
     const items = await Item.findAll();
-    res.send(items);
+    res.json(items);
   } catch (error) {
     next(error);
   }
@@ -27,7 +27,7 @@ router.delete("/:id", async(req, res, next) => {
     });
 
     const updatedItem = await Item.findAll();
-    res.send(updatedItem);
+    res.json(updatedItem);
 
   } catch (error) {
     next(error);
@@ -37,7 +37,22 @@ router.post("/", async (req, res, next) => {
 
   try {
     const newItem = await Item.create(req.body)
-    res.send(newItem)
+    res.json(newItem)
+  } catch (error) {
+    next(error);
+  }
+})
+
+router.put("/:id", async (req, res, next) => {
+
+  try {
+    const newItem = await Item.update(req.body,{
+      where:{
+        id:req.params.id
+      },
+      returning: true
+    })
+    res.json(newItem)
   } catch (error) {
     next(error);
   }

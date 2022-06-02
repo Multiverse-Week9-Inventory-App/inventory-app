@@ -8,7 +8,7 @@ export function AddItem({ setAddClicked }) {
   const [image, setImage] = useState("");
   const [price, setPrice] = useState(0);
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     console.log("I begain the handleSubmit!!!")
     fetch(`${apiURL}/items`, {
@@ -32,7 +32,7 @@ export function AddItem({ setAddClicked }) {
     setCategory("");
     setImage("");
     setPrice(0);
-    // setAddClicked(false)
+    setAddClicked(false)
   };
 
   return (

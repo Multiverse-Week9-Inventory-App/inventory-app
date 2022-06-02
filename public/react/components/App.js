@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import { ItemsList } from "./ItemsList";
 import { AddItem } from "./AddItem";
 
@@ -7,6 +6,7 @@ import { AddItem } from "./AddItem";
 
 export function App() {
   const [addClicked, setAddClicked] = useState(false)
+  const [updateClick, setUpdateClick] = useState(false)
 
   return (
     <main>
@@ -14,6 +14,7 @@ export function App() {
       <div><button onClick={() => {setAddClicked(!addClicked)}}>Add an Item</button></div>
       {!addClicked && <ItemsList />}
       {addClicked && <AddItem setAddClicked={setAddClicked} />}
+      {updateClick && <UpdateItem setUpdateClick={setUpdateClick}/>}
     </main>
   );
 }
