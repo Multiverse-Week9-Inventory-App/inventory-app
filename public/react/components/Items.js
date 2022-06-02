@@ -10,18 +10,6 @@ export function Items(props) {
   const [image, setImage] = useState(props.item.image);
   const [price, setPrice] = useState(props.item.price);
 
-  // Delete an item using ID
-  const handleDelete = async () => {
-    
-    const res = await fetch(`${apiURL}/items/${props.item.id}`, {
-      method: "DELETE",
-    });
-    const data = await res.json();
-    setNameClicked(false)
-    //props.setItems(data);
-    await props.setUpdateItem(!props.updateItem);
-  };
-
   const handleUpdate = async () => {
     const res = await fetch(`${apiURL}/items/${props.item.id}`, {
       method: "PUT",
@@ -98,7 +86,7 @@ export function Items(props) {
         <button type="submit">Update Item</button>
       </form>
 
-      <button onClick={handleDelete}>DELETE</button>
+      <button onClick={()=>{props.handleDelete(props.item.id)}}>DELETE</button>
     </div>
   );
 
