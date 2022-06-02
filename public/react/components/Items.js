@@ -11,7 +11,6 @@ export function Items(props) {
       method: "DELETE"
     });
     const data = await res.json();
-
     props.setItems(data);
 
   }
