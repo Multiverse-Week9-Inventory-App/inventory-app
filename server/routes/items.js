@@ -1,4 +1,5 @@
 const express = require("express");
+const { Items } = require("../../public/react/components/Items");
 const router = express.Router();
 const { Item } = require("../models");
 
@@ -13,6 +14,22 @@ router.get("/", async (req, res, next) => {
   try {
     const items = await Item.findAll();
     res.send(items);
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.delete("/:id", async(req, res, next) => {
+  try {
+    const items = await Item.destroy({
+      where: {
+        id: req.params.id
+      }
+    });
+
+    const updatedItem = await Item.findAll();
+    res.send(updatedItem);
+
   } catch (error) {
     next(error);
   }

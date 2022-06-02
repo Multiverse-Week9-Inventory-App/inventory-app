@@ -7,7 +7,7 @@ export function ItemsList({ items }) {
     <>
      <h2>Item List</h2>
       {items.map((item, idx) => {
-        return <Items item={item} key={idx} />;
+        return <Items item={item} setItems={setItems} key={idx} />;
       })}
     </>
   );
