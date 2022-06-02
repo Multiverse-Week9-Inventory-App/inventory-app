@@ -1,5 +1,4 @@
 const express = require("express");
-const { Items } = require("../../public/react/components/Items");
 const router = express.Router();
 const { Item } = require("../models");
 

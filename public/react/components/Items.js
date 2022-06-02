@@ -11,9 +11,8 @@ export function Items(props) {
       method: "DELETE"
     });
     const data = await res.json();
-
     props.setItems(data);
-
+    props.setUpdateItem(!props.updateItem)
   }
 
   const itemData = (
@@ -22,7 +21,7 @@ export function Items(props) {
       <p>{props.item.category}</p>
       <img src={props.item.image} alt={props.item.title} />
       <p>{props.item.price}</p>
-      <button onClick={handleDelete}></button>
+      <button onClick={handleDelete}>DELETE</button>
     </div>
   );
 
