@@ -8,12 +8,14 @@ export function AddItem({ setAddClicked }) {
   const [image, setImage] = useState("");
   const [price, setPrice] = useState(0);
 
-  const handleSubmit = async () => {
+  const handleSubmit = () => {
     e.preventDefault();
-    const createRes = await fetch(`${apiURL}/items`, {
+    console.log("I begain the handleSubmit!!!")
+    fetch(`${apiURL}/items`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Accept: "application/json",
       },
       body: JSON.stringify({
         title: title,
@@ -23,14 +25,14 @@ export function AddItem({ setAddClicked }) {
         price: price,
       }),
     })
-    if (createRes) console.log("I'm done creating!!!")
+    console.log("I'm done creating!!!")
       
     setTitle("");
     setDescription("");
     setCategory("");
     setImage("");
     setPrice(0);
-    setAddClicked(false)
+    // setAddClicked(false)
   };
 
   return (
