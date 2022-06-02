@@ -19,7 +19,7 @@ export function ItemsList() {
 
   useEffect(() => {
     fetchItems();
-  }, []);
+  }, [items]);
 
 
   return (
