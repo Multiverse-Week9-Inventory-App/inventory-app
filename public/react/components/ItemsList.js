@@ -4,7 +4,7 @@ import apiURL from "../api";
 
 export function ItemsList() {
   const [items, setItems] = useState([]);
-
+  const [updateItem,setUpdateItem] = useState(false)
 
   async function fetchItems() {
     try {
@@ -19,14 +19,14 @@ export function ItemsList() {
 
   useEffect(() => {
     fetchItems();
-  }, [items]);
+  }, [updateItem]);
 
 
   return (
     <>
      <h2>Item List</h2>
       {items.map((item, idx) => {
-        return <Items item={item} setItems={setItems} key={idx} />;
+        return <Items item={item} setItems={setItems} setUpdateItem={setUpdateItem} updateItem={updateItem} key={idx} />;
       })}
     </>
   );
