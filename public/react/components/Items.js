@@ -12,13 +12,14 @@ export function Items(props) {
 
   // Delete an item using ID
   const handleDelete = async () => {
+    
     const res = await fetch(`${apiURL}/items/${props.item.id}`, {
       method: "DELETE",
     });
     const data = await res.json();
- 
-    props.setUpdateItem(!props.updateItem);
     setNameClicked(false)
+    //props.setItems(data);
+    await props.setUpdateItem(!props.updateItem);
   };
 
   const handleUpdate = async () => {
