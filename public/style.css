@@ -8,3 +8,9 @@ img {
   min-height: 100px;
   max-height: 150px;
 }
+
+.flexrow {
+  display: flex;
+  width: 30vw;
+  flex-wrap: wrap;
+}
