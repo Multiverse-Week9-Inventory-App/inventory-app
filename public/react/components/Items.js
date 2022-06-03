@@ -46,7 +46,7 @@ export function Items(props) {
 
   const itemData = (
     <div>
-      <img src={image} alt={title} />
+      <img src={image} className="rounded img-fluid" alt={title} />
 
       <form onSubmit={handleUpdate}>
         <input
@@ -96,17 +96,17 @@ export function Items(props) {
           placeholder="0.00"
           required
         />
-        <button type="submit">Update Item</button>
+        <button type="submit" className="btn btn-success">Update Item</button>
       </form>
 
-      <button onClick={handleDelete}>DELETE</button>
+      <button type="button" className="btn btn-danger" onClick={handleDelete}>DELETE</button>
     </div>
   );
 
   return (
     <>
       <h3>
-        <button
+        <button type="button" className="btn btn-primary"
           onClick={() => {
             setNameClicked(!nameClicked);
           }}

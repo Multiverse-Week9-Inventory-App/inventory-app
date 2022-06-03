@@ -11,7 +11,7 @@ export function App() {
   return (
     <main>
       <h1>Item Store</h1>
-      <div><button onClick={() => {setAddClicked(!addClicked)}}>Add an Item</button></div>
+      <div><button type="button" className="btn btn-primary"onClick={() => {setAddClicked(!addClicked)}}>Add an Item</button></div>
       {!addClicked && <ItemsList />}
       {addClicked && <AddItem setAddClicked={setAddClicked} />}
       {updateClick && <UpdateItem setUpdateClick={setUpdateClick}/>}

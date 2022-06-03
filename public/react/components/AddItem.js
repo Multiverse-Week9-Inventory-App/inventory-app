@@ -87,7 +87,7 @@ export function AddItem({ setAddClicked }) {
             placeholder="price"
             required
           />
-          <button type="submit">Submit Item</button>
+          <button type="submit" className="btn btn-success">Submit Item</button>
         </form>
       </section>
     </>

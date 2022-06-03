@@ -24,17 +24,19 @@ export function ItemsList() {
   return (
     <>
       <h2>Item List</h2>
-      {items.map((item, idx) => {
-        return (
-          <Items
-            item={item}
-            setItems={setItems}
-            setUpdateItem={setUpdateItem}
-            updateItem={updateItem}
-            key={idx}
-          />
-        );
-      })}
+      <div className="container">
+          {items.map((item, idx) => {
+            return (
+              <Items
+                item={item}
+                setItems={setItems}
+                setUpdateItem={setUpdateItem}
+                updateItem={updateItem}
+                key={idx}
+              />
+            );
+          })}
+      </div>
     </>
   );
 }
