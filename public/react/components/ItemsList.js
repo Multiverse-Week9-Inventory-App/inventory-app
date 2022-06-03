@@ -4,21 +4,7 @@ import apiURL from "../api";
 
 export function ItemsList() {
   const [items, setItems] = useState([]);
-  const [updateItem,setUpdateItem] = useState(false)
-
-
-  // Delete an item using ID
-  const handleDelete = async (itemId) => {
-    
-    const res = await fetch(`${apiURL}/items/${itemId}`, {
-      method: "DELETE",
-    });
-    const data = await res.json();
-    setNameClicked(false)
-    //props.setItems(data);
-    setUpdateItem(!updateItem);
-  };
-
+  const [updateItem, setUpdateItem] = useState(false);
 
   async function fetchItems() {
     try {
@@ -35,12 +21,19 @@ export function ItemsList() {
     fetchItems();
   }, [updateItem]);
 
-
   return (
     <>
-     <h2>Item List</h2>
+      <h2>Item List</h2>
       {items.map((item, idx) => {
-        return <Items item={item} setItems={setItems} setUpdateItem={setUpdateItem} updateItem={updateItem} handleDelete={handleDelete} key={idx} />;
+        return (
+          <Items
+            item={item}
+            setItems={setItems}
+            setUpdateItem={setUpdateItem}
+            updateItem={updateItem}
+            key={idx}
+          />
+        );
       })}
     </>
   );

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { browserHistory } from 'react-router';
 
 import apiURL from "../api";
 
@@ -9,6 +10,18 @@ export function Items(props) {
   const [category, setCategory] = useState(props.item.category);
   const [image, setImage] = useState(props.item.image);
   const [price, setPrice] = useState(props.item.price);
+
+  // Delete an item using ID
+  const handleDelete = async () => {
+    const res = await fetch(`${apiURL}/items/${props.item.id}`, {
+      method: "DELETE",
+    });
+    const data = await res.json();
+ 
+    props.setUpdateItem(!props.updateItem);
+    setNameClicked(false)
+    window.location.reload(false)
+  };
 
   const handleUpdate = async () => {
     const res = await fetch(`${apiURL}/items/${props.item.id}`, {
@@ -86,7 +99,7 @@ export function Items(props) {
         <button type="submit">Update Item</button>
       </form>
 
-      <button onClick={()=>{props.handleDelete(props.item.id)}}>DELETE</button>
+      <button onClick={handleDelete}>DELETE</button>
     </div>
   );
 
