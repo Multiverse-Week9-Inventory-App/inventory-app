@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { browserHistory } from "react-router";
 
 import apiURL from "../api";
 
