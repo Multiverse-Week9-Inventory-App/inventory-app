@@ -1,6 +1,9 @@
 {
   "name": "inventoryapp",
   "version": "1.2.0",
+  "engines": {
+    "node": "17.8.0"
+  },
   "scripts": {
     "test": "jest",
     "client-dev": "parcel public/index.html --open",
@@ -15,6 +18,7 @@
     "dotenv": "16.0.0",
     "express": "^4.17.1",
     "morgan": "1.10.0",
+    "node": "17.7.2",
     "nodemon": "^2.0.16",
     "parcel-bundler": "^1.12.5",
     "react": "^17.0.2",
