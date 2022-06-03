@@ -27,32 +27,6 @@ export function ItemsList() {
     countItemsBy3();
   }, [updateItem]);
 
-  // const listItems = () => {
-  //   let result = [];
-  //   for (let i = 0; i < numRows; i++) {
-  //     let thisRowItems;
-  //     let thisRow = <div>{thisRowItems}</div>
-  //     for (let j = 0; j < items.length; j++) {
-  //       // thisRowItems.push()
-  //       result.push(
-  //         thisRowItems.map((item, idx) => {
-  //           return (
-  //             <Items
-  //               item={item}
-  //               setItems={setItems}
-  //               setUpdateItem={setUpdateItem}
-  //               updateItem={updateItem}
-  //               key={idx}
-  //             />
-  //           );
-  //         })
-  //       );
-  //     }
-  //   }
-
-  //   return result.map((row) => {});
-  // };
-
   return (
     <>
       <h2>Item List</h2>

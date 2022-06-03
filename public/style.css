@@ -7,10 +7,20 @@
 img {
   min-height: 100px;
   max-height: 150px;
+  display: flex;
+  justify-content: center;
 }
 
 .flexrow {
   display: flex;
   width: 30vw;
   flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.edit_delete_btn {
+  display: flex;
+  width: 8vw;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }

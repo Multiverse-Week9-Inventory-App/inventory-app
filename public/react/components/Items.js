@@ -49,6 +49,7 @@ export function Items(props) {
       <img src={image} className="rounded img-fluid" alt={title} />
 
       <form onSubmit={handleUpdate}>
+        <div>
         <input
           type="text"
           value={title}
@@ -58,6 +59,8 @@ export function Items(props) {
           placeholder="Title"
           required
         />
+        </div>
+        <div>
         <input
           type="textarea"
           value={description}
@@ -67,6 +70,8 @@ export function Items(props) {
           placeholder="Description"
           required
         />
+        </div>
+        <div>
         <input
           type="text"
           value={category}
@@ -76,6 +81,8 @@ export function Items(props) {
           placeholder="Category"
           required
         />
+        </div>
+        <div>
         <input
           type="text"
           value={image}
@@ -85,6 +92,8 @@ export function Items(props) {
           placeholder="image.jpg"
           required
         />
+        </div>
+        <div>
         <input
           type="number"
           min="0.00"
@@ -96,10 +105,12 @@ export function Items(props) {
           placeholder="0.00"
           required
         />
-        <button type="submit" className="btn btn-success">Update Item</button>
+        </div>
+        <div>
+        <button type="submit" className="btn btn-success edit_delete_btn">Update Item</button>
+        <button type="button" className="btn btn-danger edit_delete_btn" onClick={handleDelete}>DELETE</button>
+        </div>
       </form>
-
-      <button type="button" className="btn btn-danger" onClick={handleDelete}>DELETE</button>
     </div>
   );
 
