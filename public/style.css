@@ -17,3 +17,7 @@ img {
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
+.title-button{
+  width: 20em;
+}

@@ -137,7 +137,7 @@ export function Items(props) {
       <h3>
         <button
           type="button"
-          className="btn btn-primary"
+          className="btn btn-primary title-button"
           onClick={() => {
             setNameClicked(!nameClicked);
           }}
