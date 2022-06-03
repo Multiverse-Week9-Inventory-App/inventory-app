@@ -30,8 +30,10 @@ export function ItemsList() {
   return (
     <>
       <h2>Item List</h2>
+      <div className="card-columns">
       <div className="container flexrow">{items.map((item, idx) => {
             return (
+              <div className="card">
               <Items
                 item={item}
                 setItems={setItems}
@@ -39,8 +41,11 @@ export function ItemsList() {
                 updateItem={updateItem}
                 key={idx}
               />
+              </div>
             );
           })}</div>
+          
+          </div>
     </>
   );
 }

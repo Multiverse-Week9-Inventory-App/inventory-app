@@ -17,10 +17,3 @@ img {
   flex-wrap: wrap;
   justify-content: space-between;
 }
-
-.edit_delete_btn {
-  display: flex;
-  width: 8vw;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
