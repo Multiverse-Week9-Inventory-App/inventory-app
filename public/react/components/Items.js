@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { browserHistory } from 'react-router';
+import { browserHistory } from "react-router";
 
 import apiURL from "../api";
 
@@ -17,10 +17,10 @@ export function Items(props) {
       method: "DELETE",
     });
     const data = await res.json();
- 
+
     props.setUpdateItem(!props.updateItem);
-    setNameClicked(false)
-    window.location.reload(false)
+    setNameClicked(false);
+    window.location.reload(false);
   };
 
   const handleUpdate = async () => {
@@ -46,67 +46,98 @@ export function Items(props) {
 
   const itemData = (
     <div>
-      <img src={image} className="rounded img-fluid" alt={title} />
+      <div>
+      <img src={image} className="rounded img-fluid card-img-top" alt={title} />
+      </div>
 
+      <div className="card-body">
       <form onSubmit={handleUpdate}>
-        <input
-          type="text"
-          value={title}
-          onChange={(e) => {
-            setTitle(e.target.value);
-          }}
-          placeholder="Title"
-          required
-        />
-        <input
-          type="textarea"
-          value={description}
-          onChange={(e) => {
-            setDescription(e.target.value);
-          }}
-          placeholder="Description"
-          required
-        />
-        <input
-          type="text"
-          value={category}
-          onChange={(e) => {
-            setCategory(e.target.value);
-          }}
-          placeholder="Category"
-          required
-        />
-        <input
-          type="text"
-          value={image}
-          onChange={(e) => {
-            setImage(e.target.value);
-          }}
-          placeholder="image.jpg"
-          required
-        />
-        <input
-          type="number"
-          min="0.00"
-          step="0.01"
-          value={price}
-          onChange={(e) => {
-            setPrice(e.target.value);
-          }}
-          placeholder="0.00"
-          required
-        />
-        <button type="submit" className="btn btn-success">Update Item</button>
-      </form>
+        <div className="title">
+          <label htmlFor={title}>Title</label>
+          <input
+            type="text"
+            id={title}
+            value={title}
+            onChange={(e) => {
+              setTitle(e.target.value);
+            }}
+            placeholder="Title"
+            required
+          />
+        </div>
+        <div className="text">
+        <label htmlFor={description}>Description</label>
+          <textarea rows="5"
+            type="textarea"
+            id={description}
+            value={description}
+            onChange={(e) => {
+              setDescription(e.target.value);
+            }}
+            placeholder="Description"
+            required
+            />
+        </div>
+        <div className="card-text">
+        <label htmlFor={props.item.id}>Category</label>
+          <input
+            type="text"
+            id={props.item.id}
+            value={category}
+            onChange={(e) => {
+              setCategory(e.target.value);
+            }}
+            placeholder="Category"
+            required
+          />
+        </div>
+        <div className="card-text">
+        <label htmlFor={image}>Image URL</label>
+          <input
+            type="text"
+            id={image}
+            value={image}
+            onChange={(e) => {
+              setImage(e.target.value);
+            }}
+            placeholder="image.jpg"
+            required
+          />
+        </div>
 
-      <button type="button" className="btn btn-danger" onClick={handleDelete}>DELETE</button>
+        <div className="card-text">
+        <label htmlFor={price}>Price</label>
+          <input
+            type="number"
+            id={price}
+            min="0.00"
+            step="0.01"
+            value={price}
+            onChange={(e) => {
+              setPrice(e.target.value);
+            }}
+            placeholder="0.00"
+            required
+          />
+        </div>
+        <button type="submit" className="btn btn-success my-2 mx-2">
+          Update Item
+        </button>
+
+        <button type="button" className="btn btn-danger my-2 mx-2" onClick={handleDelete}>
+        DELETE
+      </button>
+      </form>
+      </div>
     </div>
   );
 
   return (
     <>
       <h3>
-        <button type="button" className="btn btn-primary"
+        <button
+          type="button"
+          className="btn btn-primary"
           onClick={() => {
             setNameClicked(!nameClicked);
           }}

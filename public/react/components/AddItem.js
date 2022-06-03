@@ -39,9 +39,10 @@ export function AddItem({ setAddClicked }) {
     <>
       <section id="controls">
         <h3>Add An Item</h3>
-        <form onSubmit={handleSubmit}>
+        <form className="form-inline" onSubmit={handleSubmit}>
           <input
             type="text"
+            className="form-control mb-2 mr-sm-2" id="formInput"
             value={title}
             onChange={(e) => {
               setTitle(e.target.value);
@@ -51,6 +52,7 @@ export function AddItem({ setAddClicked }) {
           />
           <input
             type="textarea"
+            className="form-control mb-2 mr-sm-2" id="formInput"
             value={description}
             onChange={(e) => {
               setDescription(e.target.value);
@@ -60,6 +62,7 @@ export function AddItem({ setAddClicked }) {
           />
           <input
             type="text"
+            className="form-control mb-2 mr-sm-2" id="formInput"
             value={category}
             onChange={(e) => {
               setCategory(e.target.value);
@@ -69,6 +72,7 @@ export function AddItem({ setAddClicked }) {
           />
           <input
             type="text"
+            className="form-control mb-2 mr-sm-2" id="formInput"
             value={image}
             onChange={(e) => {
               setImage(e.target.value);
@@ -78,6 +82,7 @@ export function AddItem({ setAddClicked }) {
           />
           <input
             type="number"
+            className="form-control mb-2 mr-sm-2" id="formInput"
             min="0.00"
             step="0.01"
             value={price}
@@ -87,7 +92,7 @@ export function AddItem({ setAddClicked }) {
             placeholder="price"
             required
           />
-          <button type="submit" className="btn btn-success">Submit Item</button>
+          <button type="submit" className="btn btn-success mb-4">Submit Item</button>
         </form>
       </section>
     </>
