@@ -32,6 +32,7 @@ router.delete("/:id", async (req, res, next) => {
     next(error);
   }
 });
+// start of presentation
 router.post("/", async (req, res, next) => {
   try {
     const newItem = await Item.create(req.body);
@@ -40,6 +41,7 @@ router.post("/", async (req, res, next) => {
     next(error);
   }
 });
+// end of presentation
 
 router.put("/:id", async (req, res, next) => {
   try {

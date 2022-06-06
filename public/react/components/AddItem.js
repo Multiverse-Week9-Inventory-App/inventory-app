@@ -2,15 +2,16 @@ import React, { useState } from "react";
 import apiURL from "../api";
 
 export function AddItem({ setAddClicked }) {
+  // start of presentation
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
   const [image, setImage] = useState("");
   const [price, setPrice] = useState(0);
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("I begain the handleSubmit!!!");
     fetch(`${apiURL}/items`, {
       method: "POST",
       headers: {
@@ -25,7 +26,6 @@ export function AddItem({ setAddClicked }) {
         price: price,
       }),
     });
-    console.log("I'm done creating!!!");
 
     setTitle("");
     setDescription("");
@@ -34,6 +34,7 @@ export function AddItem({ setAddClicked }) {
     setPrice(0);
     setAddClicked(false);
   };
+  // end of presentation
 
   return (
     <>
