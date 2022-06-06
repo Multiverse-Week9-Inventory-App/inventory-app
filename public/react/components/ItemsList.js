@@ -31,21 +31,22 @@ export function ItemsList() {
     <>
       <h2>Item List</h2>
       <div className="card-columns">
-      <div className="container flexrow">{items.map((item, idx) => {
+        <div className="container flexrow">
+          {items.map((item, idx) => {
             return (
               <div className="card">
-              <Items
-                item={item}
-                setItems={setItems}
-                setUpdateItem={setUpdateItem}
-                updateItem={updateItem}
-                key={idx}
-              />
+                <Items
+                  item={item}
+                  setItems={setItems}
+                  setUpdateItem={setUpdateItem}
+                  updateItem={updateItem}
+                  key={idx}
+                />
               </div>
             );
-          })}</div>
-          
-          </div>
+          })}
+        </div>
+      </div>
     </>
   );
 }

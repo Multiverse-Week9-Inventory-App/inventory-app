@@ -18,44 +18,41 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-router.delete("/:id", async(req, res, next) => {
+router.delete("/:id", async (req, res, next) => {
   try {
     const items = await Item.destroy({
       where: {
-        id: req.params.id
-      }
+        id: req.params.id,
+      },
     });
 
     const updatedItem = await Item.findAll();
     res.json(updatedItem);
-
   } catch (error) {
     next(error);
   }
 });
 router.post("/", async (req, res, next) => {
-
   try {
-    const newItem = await Item.create(req.body)
-    res.json(newItem)
+    const newItem = await Item.create(req.body);
+    res.json(newItem);
   } catch (error) {
     next(error);
   }
-})
+});
 
 router.put("/:id", async (req, res, next) => {
-
   try {
-    const newItem = await Item.update(req.body,{
-      where:{
-        id:req.params.id
+    const newItem = await Item.update(req.body, {
+      where: {
+        id: req.params.id,
       },
-      returning: true
-    })
-    res.json(newItem)
+      returning: true,
+    });
+    res.json(newItem);
   } catch (error) {
     next(error);
   }
-})
+});
 
 module.exports = router;
